@@ -9,19 +9,86 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-8 offset-md-2">
-					
-					<div class="my-card">
+				<div class="col-md-6 offset-md-3 mx-auto">
+					<div class="my-card mt-2">
 						
-						<h1>Register Here</h1>
+						<div class="container text-center">
+							<img style="width: 80px;" src="" th:src="@{/Img/membership.png}" alt="" />
+						</div>
 						
+						<h1 class="text-center">Register Here</h1>
+						
+						<form action="" th:action"@{/do_register}" method="post">
+							
+							<!--name field-->
+							<div class="mb-3">
+							    <label for="name_field" class="form-label">Your Name</label>
+							    
+							    <input 
+							    type="text" 
+							    class="form-control" 
+							    id="name_field" 
+							    aria-describedby="emailHelp"
+							    placeholder="Enter here"
+							    required
+							    />
+							    
+  							</div>
+  							
+  							<!--email field-->
+							<div class="mb-3">
+							    <label for="email_field" class="form-label">Your Email</label>
+							    
+							    <input 
+							    type="email" 
+							    class="form-control" 
+							    id="email_field" 
+							    aria-describedby="emailHelp"
+							    placeholder="Enter here"
+							    required
+							    />
+							    
+  							</div>
+  							
+  							<!--password field-->
+							<div class="mb-3">
+							    <label for="password_field" class="form-label">Your Password</label>
+							    
+							    <input 
+							    type="password" 
+							    class="form-control" 
+							    id="password_field" 
+							    aria-describedby="emailHelp"
+							    placeholder="Enter here"
+							    required
+							    />
+							    
+  							</div>
+							
+							<!--user about field-->
+							
+							<div class="form-group">
+								
+								<textarea placeholder="About Yourself" rows="9" class="formcontrol"></textarea>
+								
+							</div>
+							
+							<div class="container text-center">
+								
+								<button type="submit" class="btn bg-primary text-white">
+									Submit
+								</button>
+								
+								<button type="reset" class="btn btn-warning">
+									Reset
+								</button>
+								
+							</div>
+						</form>
 					</div>
 					
-				</div>	
-				
-			
+				</div>
 			</div>
-			
 		</div>
 	</section>
 </body>
