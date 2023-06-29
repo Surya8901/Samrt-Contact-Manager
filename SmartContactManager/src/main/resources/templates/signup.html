@@ -18,19 +18,21 @@
 						
 						<h1 class="text-center">Register Here</h1>
 						
-						<form action="" th:action"@{/do_register}" method="post">
+						<form action="" th:action="@{/do_register}" method="post" th:object="${user}">
 							
 							<!--name field-->
 							<div class="mb-3">
 							    <label for="name_field" class="form-label">Your Name</label>
 							    
-							    <input 
+							    <input
+							    name="name"
 							    type="text" 
 							    class="form-control" 
 							    id="name_field" 
 							    aria-describedby="emailHelp"
 							    placeholder="Enter here"
 							    required
+							    th:value="${user.name}"
 							    />
 							    
   							</div>
@@ -39,13 +41,15 @@
 							<div class="mb-3">
 							    <label for="email_field" class="form-label">Your Email</label>
 							    
-							    <input 
+							    <input
+							    name="email"
 							    type="email" 
 							    class="form-control" 
 							    id="email_field" 
 							    aria-describedby="emailHelp"
 							    placeholder="Enter here"
 							    required
+							    th:value="${user.email}"
 							    />
 							    
   							</div>
@@ -54,7 +58,8 @@
 							<div class="mb-3">
 							    <label for="password_field" class="form-label">Your Password</label>
 							    
-							    <input 
+							    <input
+							    name="password"
 							    type="password" 
 							    class="form-control" 
 							    id="password_field" 
@@ -69,7 +74,20 @@
 							
 							<div class="form-group">
 								
-								<textarea placeholder="About Yourself" rows="9" class="formcontrol"></textarea>
+								<textarea name="about" th:value="${user.about}" placeholder="About Yourself" rows="9" class="formcontrol"></textarea>
+								
+							</div>
+							
+							<!--terms and conditions-->
+							
+							<div class="form-group form-check">
+								
+								<input type="checkbox" 
+								name="agreement"
+								id="agreement"
+								/>
+								
+								<label for="agreement">Accept terms and conditions</label>
 								
 							</div>
 							
