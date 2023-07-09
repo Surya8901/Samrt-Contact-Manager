@@ -3,6 +3,9 @@ package com.smart.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,6 +23,10 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	
+	@Size(min = 2, max = 20, message = "min 2 and max 20 characters are allowed !!")
+	@NotBlank(message = "Name field is required !!")
 	private String name;
 	@Column(unique = true)
 	private String email;
